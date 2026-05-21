@@ -1,0 +1,15 @@
+{
+    "problem_statement": "Title: merge_configs() overwrites nested dicts instead of deep-merging. Current behavior: merge_configs({'db': {'host': 'localhost', 'port': 5432}}, {'db': {'port': 5433}}) returns {'db': {'port': 5433}} — 'host' is lost. Expected behavior: Should return {'db': {'host': 'localhost', 'port': 5433}}.",
+    "hints": "Consider how to handle the case where both base and override have the same key as a nested dictionary.",
+    "tests": {
+        "fail_to_pass": [
+            "test_deep_merge_nested_dicts",
+            "test_deeply_nested_three_levels"
+        ],
+        "pass_to_pass": [
+            "test_shallow_merge",
+            "test_empty_override",
+            "test_empty_base"
+        ]
+    }
+}
